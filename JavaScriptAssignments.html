@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+ <link rel="stylesheet" href="style.css" /> 
+ <title>Javascript Assignmaents</title> 
+</head>
+
+<body>
+    <div class="container">
+        <br>
+        <div class="iframeWindow"  align="center" >
+            <iframe src="CountdownTimer.html" name="targetwindow" id="Target_Window" frameborder="" width="1000px" height="700px"> Javascript Assignment</iframe>
+        </div>
+        <div class="pagination">
+            <button class="btn1" onclick="backBtn()"><img src="images/448-arrow.png">prev</button>
+            <ul>
+                <li class="link active" value="1" onclick="activeLink()">1</li>
+                <li class="link" value="2" onclick="activeLink()"">2</li>
+                <li class="link" value="3" onclick="activeLink()"">3</li>
+                <li class="link" value="4" onclick="activeLink()"">4</li>
+                <li class="link" value="5" onclick="activeLink()"">5</li>
+                <li class="link" value="6" onclick="activeLink()"">6</li>
+                <li class="link" value="7" onclick="activeLink()"">7</li>
+               
+            </ul>
+            <button class="btn2" onclick="nextBtn()">next<img src="images/448-arrow.png"></button>
+        </div>
+    </div>
+    <script>
+        let link=document.getElementsByClassName("link");
+        let currentValue=1;
+        let iframe= document.getElementById("Target_Window");        
+        let active = document.querySelector('.link active');
+        let Index =0;
+        function activeLink()
+        {
+            for(l of link)
+            {
+                l.classList.remove("active");
+            }
+            event.target.classList.add("active");
+            currentValue= event.target.value;
+            SetIframe();
+        }
+
+        function backBtn()
+        {
+            if(currentValue>1)
+            {
+                for(l of link)
+                {
+                    l.classList.remove("active");
+                }
+                currentValue--;
+                link[currentValue-1].classList.add("active");
+            }
+            SetIframe();
+
+        }
+
+        function nextBtn()
+        {
+            if(currentValue < 7)
+            {
+                for(l of link)
+                {
+                    l.classList.remove("active");
+                }
+                currentValue++;
+                link[currentValue-1].classList.add("active");
+            }
+            SetIframe();
+        }
+
+        function SetIframe()
+        { 
+            console.log(currentValue);   
+            switch (currentValue)
+            {
+                case 1:
+                    iframe.setAttribute("src","CountdownTimer.html");                    
+                    break;
+                case 2:
+                    iframe.setAttribute("src","StickyHeader.html");
+                    break;                    
+                case 3:
+                    iframe.setAttribute("src","calculator.html");
+                    break;                    
+                case 4:
+                    iframe.setAttribute("src","progress bar.html");
+                    break;
+                case 5:
+                    iframe.setAttribute("src","RangeSlider.html");
+                    break;
+                case 6:
+                    iframe.setAttribute("src","TaskList.html");
+                    break;
+                case 7:
+                    iframe.setAttribute("src","ButtonAnimation.html");
+                    break;
+
+            }
+            
+        }
+
+
+    </script>
+</body>
+</html>

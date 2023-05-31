@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta http-equiv="X-UA-Compatible" content="ie=edge" /> 
+ 
+ <title>Change Opacity using Image Slider</title> 
+ <style>
+    *{
+      margin:0;
+      padding:0;
+          	
+      font-family:'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 20px;      
+        color: white;
+        background:rgb(158, 9, 143);  
+        border: 1px;
+        box-shadow: 5px 3px 10px rgba(42, 196, 239, 0.1);
+        text-shadow: 5px 3px 10px rgba(18, 122, 219, 0.889);
+      }
+      #slider
+      {
+        width: 500px;
+        color: rgba(137, 43, 226, 0.889);
+      }
+
+      .container
+      {
+        width:100%;
+        height: 80vh;	
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      .form-label{
+        color:aliceblue;
+      }
+
+ </style>
+</head>
+<body>
+    <h1> Opacity Range Slider</h1> <br>
+    <div class="container">
+       
+        <img src="images/sunset-1373171__340.jpg" alt="" id="img">
+        <br> <br>
+        <input value="50" type="range" id="slider" min="0" max="100">
+        <br> <br><label for="customRange1" class="form-label">Adjust the silder to change image opacity</label>
+    </div>
+    
+    <script>
+        var img= document.getElementById("img");
+        var slider = document.getElementById("slider");
+        slider.oninput = () =>{ img.style.opacity = slider.value/100};
+    </script>
+</body>
+</html>

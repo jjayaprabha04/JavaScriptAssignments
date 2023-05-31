@@ -1,0 +1,132 @@
+<!-- Create a simple Program to build the Calculator in JavaScript using with HTML and CSS web languages. -->
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+<title> JavaScript Calculator </title>
+
+<style>
+  *{
+      margin:0;
+      padding:0;
+      background:rgb(158, 9, 143);      	
+      font-family:'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+
+    h1 {
+        text-align: center;
+        padding: 23px;      
+        color: white;
+        border: 1px;
+        box-shadow: 5px 3px 10px rgba(42, 196, 239, 0.1);
+        text-shadow: 5px 3px 10px rgba(18, 122, 219, 0.889);
+      }
+
+    
+    .container
+      {
+        width:100%;
+        height: 87vh;	
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(360deg,rgb(162, 25, 133), rgb(230, 93, 175));	
+      }
+
+      .calculator
+      {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #772a76;;
+        padding: 20px;
+        border-radius: 10px;
+      }
+
+      .calculator form input
+      {
+        border:0;
+        outline:0;
+        width:60px;
+        height:60px;
+        border-radius: 10px;
+        box-shadow: 0px 1px 15px rgba(233, 151, 151, 0.844), 0px 0px 15px rgba(200, 12, 12, 0.225);
+        background: transparent;
+        font-size: 20px;
+        color: aliceblue;
+        cursor: pointer;
+        margin: 10px;
+
+      }
+
+      form .display
+      {
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 0;
+      }
+      form .display input
+      {
+        text-align: right;
+        flex:1;
+        font-size: 45px;
+        box-shadow: none;
+      } 
+
+      form input.equal
+      {
+        width:145px;
+      }
+
+
+
+</style>
+
+</head>
+<body>
+<h1>JavaScript Calculator </h1>
+<div class= "container">
+  
+  <div class="calculator">
+    <form name = "form1">
+      <div class="display">
+        <input type="text" name="display">
+      </div>
+      <div>
+        <input type = "button" value = "AC" onclick = "display.value = '' ">
+        <input type = "button" value = "DE" onclick = "display.value = display.value.toString().slice(0,-1) ">
+        <input type = "button" value = "." onclick = "display.value += '.' ">
+        <input type = "button" value = "/" onclick = "display.value += '/'">
+      </div>
+      <div>
+          <input type = "button" value = "7" onclick = "display.value += '7' ">
+          <input type = "button" value = "8" onclick = "display.value += '8' ">
+          <input type = "button" value = "9" onclick = "display.value += '9' ">
+          <input type = "button" value = "*" onclick = "display.value += '*' ">
+      </div>
+      <div>
+        <input type = "button" value = "4" onclick = "display.value += '4' ">
+        <input type = "button" value = "5" onclick = "display.value += '5' ">
+        <input type = "button" value = "6" onclick = "display.value += '6' ">
+        <input type = "button" value = "-" onclick = "display.value += '-' ">        
+      </div>
+      <div>
+        <input type = "button" value = "1" onclick = "display.value += '1' ">
+        <input type = "button" value = "2" onclick = "display.value += '2' ">
+        <input type = "button" value = "3" onclick = "display.value += '3' ">
+        <input type = "button" value = "+" onclick = "display.value += '+' ">        
+      </div>
+      <div>
+        <input type = "button" value = "00" onclick = "display.value += '00' ">
+        <input type = "button" value = "0" onclick = "display.value += '0' ">
+        <input type = "button" value = "=" class="equal" onclick = "display.value=eval(display.value) ">
+        
+      </div>
+    </form>
+
+  </div>
+  
+</body>
+</html>
+
+ 
